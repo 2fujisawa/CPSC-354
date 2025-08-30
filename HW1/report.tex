@@ -65,7 +65,7 @@
   \newtheorem{remark}[theorem]{Remark}
 
 \title{CPSC-354 Report}
-\author{Linus Fujisawa \\ Chapman University}
+\author{Linus \\ Chapman University}
 
 \date{\today} 
 
@@ -73,26 +73,34 @@
 
 \maketitle
 
-\begin{abstract}
-\end{abstract}
+
 
 \setcounter{tocdepth}{3}
-\tableofcontents
 
-\section{Introduction}\label{intro}
+\section*{The MU Puzzle}
 
-\section{Week by Week}\label{homework}
+The MU Puzzle, introduced in Chapter 1, starts with a very simple setup the axiom string \textbf{MI} and four rules that let us change or extend the string using the letters M, I, and U. The puzzle asks whether it’s possible to reach the string \textbf{MU} by applying these rules.
 
-\subsection{Week 1}
+At first glance it seems like it might work if you just keep trying different combinations, but after some trial and error this problem will not have a solution. The key observation is that no matter what rule you apply, the number of I’s never becomes a multiple of three. It always stays in a certain pattern.
 
-\section{Essay}
+\begin{itemize}
+  \item The starting axiom $MI$ has one I.
+  \item Rule 1 ($xI \to xIU$) adds a U at the end, but doesn’t change the number of I’s.
+  \item Rule 2 ($Mx \to Mxx$) doubles the part after the M, which changes the number of I’s but never makes it a multiple of three.
+  \item Rule 3 ($III \to U$) removes three I’s, so the overall pattern stays the same.
+  \item Rule 4 ($UU \to$ delete) only affects U’s, not I’s.
+\end{itemize}
 
-\section{Evidence of Participation}
 
-\section{Conclusion}\label{conclusion}
+So the system never produces a string where the number of I’s is a multiple of three. Since $MU$ has zero I’s, it doesn’t fit the pattern, which means there’s no way to reach it from $MI$.
 
-\begin{thebibliography}{99}
-\bibitem[BLA]{bla} Author, \href{https://en.wikipedia.org/wiki/LaTeX}{Title}, Publisher, Year.
-\end{thebibliography}
+\par
+For example, starting with $MI$ (which has 1 I), Rule 1 gives $MIU$. This still has 1 I. If we keep going, $MIU \to MIUIU$ using Rule 2, the number of I’s doubles to 2. At no point does the number of I’s ever become a multiple of three, which is why $MU$ can’t be reached.
+
+\section*{Conclusion}
+In the end, the MU puzzle has no solution. The rules simply don’t allow us to create $MU$ starting from $MI$. By spotting the pattern with the I’s, we can prove once and for all that $MU$ is unreachable.
+
+
+
 
 \end{document}
